@@ -30,7 +30,12 @@ lista = ['Pergunta','Opções','Resposta']
 for i in perguntas:
     for x in lista:
         if x == 'Resposta':
-            resposta = input('Resposta: ')
+            try:
+                resposta = int(input('Resposta: '))
+            except:
+                print('A sua resposta tem que ser um número dentro das opções')
+                exit()
+            verificador(resposta)
             if resposta == aux:
                 print('Resposta correta')
                 right += 1
@@ -40,7 +45,7 @@ for i in perguntas:
         elif x == 'Opções':
             for idx, opcao in enumerate(i[x]):
                 if opcao == i['Resposta']:
-                    aux = str(idx)
+                    aux = idx +1
                 opcoes = f'{idx}) {opcao}'
                 print(opcoes)
         else: 
