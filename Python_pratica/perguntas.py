@@ -1,3 +1,10 @@
+def verificador(num):
+    if num in range(1, 4):
+        return num
+    else:
+        print('A sua resposta tem que ser um número dentro das opções')
+        exit()
+
 perguntas = [
     {
         'Pergunta': 'Quanto é 2+2?',
